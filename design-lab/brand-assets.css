@@ -1,0 +1,12 @@
+/* EVOLVE official identity — assets loaded on demand, original interface remains as fallback */
+.evolve-brand-image{display:block;object-fit:contain;object-position:left center;width:100%;height:100%;max-width:260px;max-height:88px}
+.evolve-branded{display:flex!important;align-items:center!important;min-width:0}
+.evolve-branded>:not(.evolve-brand-image){display:none!important}
+.portal-brand.evolve-branded{width:clamp(145px,19vw,230px);height:67px}
+.portal-brand.evolve-branded img{max-width:100%;max-height:100%}
+.wordmark.evolve-branded{height:70px;width:210px}
+.sidebar .brand.evolve-branded{min-height:77px;width:100%;max-width:210px}
+.top .brand.evolve-branded{height:62px;width:192px;letter-spacing:normal}
+.bootmark.evolve-branded{height:84px;width:75px}
+.evolve-brand-image.evolve-icon-image{width:54px;height:64px;max-width:54px;max-height:64px;object-fit:contain}
+@media(max-width:560px){.portal-brand.evolve-branded{width:143px;height:53px}.top .brand.evolve-branded{width:152px;height:52px}.sidebar .brand.evolve-branded{width:175px}.wordmark.evolve-branded{width:155px;height:54px}}
