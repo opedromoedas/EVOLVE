@@ -18,3 +18,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{box-shadow:0 0 0
 .progress-fill,.bar-slot .bar{transition:width .75s cubic-bezier(.2,.8,.2,1),height .75s cubic-bezier(.2,.8,.2,1)}
 }
 @media(prefers-reduced-motion:reduce){.onboard-left *,.onboard-right *,.portal-primary,.onboard-screen .btn.primary{animation:none!important;transition:none!important}}
+
+/* User motion toggle takes priority over the decorative animations. */
+:root[data-fx-motion="off"] .onboard-left *,:root[data-fx-motion="off"] .onboard-right *,:root[data-fx-motion="off"] .portal-primary,:root[data-fx-motion="off"] .onboard-screen .btn.primary{animation:none!important;transition:none!important}
+@media(max-width:800px){.fx-motion-button{margin-left:auto;flex:0 0 auto;font-size:9px;letter-spacing:0;min-height:36px;padding:7px 9px}.lab-ribbon{padding-right:max(12px,env(safe-area-inset-right))!important}}
