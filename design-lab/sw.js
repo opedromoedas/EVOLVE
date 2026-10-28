@@ -1,7 +1,7 @@
 /* EVOLVE Beta — cache por rota: o Research Lab offline nunca deve virar a Home. */
-const CACHE = 'evolve-designlab-v02-scifi';
+const CACHE = 'evolve-designlab-v03-cinematic';
 const ASSETS = [
-  './', './index.html', './styles.css', './design-lab.css', './scifi.css', './scifi.js', './scifi-kit.css', './scifi-kit.js', './design-system.html', './app.js', './research.js', './config.js',
+  './', './index.html', './styles.css', './design-lab.css', './scifi.css', './scifi.js', './cinematic.css', './cinematic.js', './mountains.svg', './scifi-kit.css', './scifi-kit.js', './design-system.html', './app.js', './research.js', './config.js',
   './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png',
   './apple-touch-icon.png', './privacidade.html', './research.html',
   './research-dashboard.js', './research-dashboard.css', './design-lab-research.css'
