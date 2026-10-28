@@ -2,6 +2,10 @@
 
 **Pasta publicada:** `/beta/` do repositório `opedromoedas/EVOLVE`.
 
+**Versão:** EVOLVE Beta 0.3 — UX Research, consentimento opcional e correção do cache offline por página.
+
+**Acesso:** [Aplicativo](https://opedromoedas.github.io/EVOLVE/beta/) · [Research Lab](https://opedromoedas.github.io/EVOLVE/beta/research.html) · [Privacidade](https://opedromoedas.github.io/EVOLVE/beta/privacidade.html).
+
 **Link após habilitar GitHub Pages:** https://opedromoedas.github.io/EVOLVE/beta/
 
 ## O que funciona hoje, sem credenciais
