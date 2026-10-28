@@ -3,8 +3,8 @@
    Para ativar contas/sincronização, veja README.md.
 */
 window.EVOLVE_CONFIG = {
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  supabaseUrl: 'https://orsistqtdicdbjgfwxbx.supabase.co',
+  supabaseAnonKey: 'sb_publishable_IgeQp7knt-qStSF0zCpQTw_t6rxHUH0',
   googleClientId: '',
   aiFunctionName: 'coach'
 };
