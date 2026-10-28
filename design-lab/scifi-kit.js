@@ -1,0 +1,8 @@
+(()=>{'use strict';const $=s=>document.querySelector(s);let on=!matchMedia('(prefers-reduced-motion: reduce)').matches;try{if(localStorage.getItem('evolve_scifi_motion_v02')==='off')on=false}catch(e){}
+function motion(v){on=v;document.documentElement.dataset.kitMotion=on?'on':'off';const b=$('#scifiMotion');if(b){b.textContent=on?'◉ Animações ligadas':'◎ Animações desligadas';b.setAttribute('aria-pressed',String(on))}try{localStorage.setItem('evolve_scifi_motion_v02',on?'on':'off')}catch(e){}}
+$('#scifiMotion')?.addEventListener('click',()=>motion(!on));motion(on);
+$('#scifiRadar')?.addEventListener('click',()=>{const b=$('#scifiRadar'),show=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(show));$('.scifi-radar').style.visibility=show?'visible':'hidden';b.textContent=show?'◉ Radar visível':'◎ Radar oculto'});
+$('#scifiReplay')?.addEventListener('click',()=>{const p=$('.scifi-chart-path');if(!p)return;p.style.animation='none';p.getBoundingClientRect();p.style.animation='';$('#replayStatus').textContent=on?'Gráfico reiniciado.':'Modo sem animações: gráfico estático.'});
+$('#scifiMeter')?.addEventListener('click',()=>{const cards=[...document.querySelectorAll('.scifi-card')];cards.forEach(c=>c.classList.toggle('active'));$('#scifiMeter').textContent=cards[0]?.classList.contains('active')?'Redefinir indicadores':'Animar indicadores'});
+document.querySelectorAll('.scifi-card').forEach(c=>c.classList.add('active'));
+})();
