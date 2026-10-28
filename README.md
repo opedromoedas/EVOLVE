@@ -68,3 +68,21 @@ Os arquivos estáticos estão em `/beta`. Não substituem o antigo `/index.html`
 3. **Minha agenda → Concluir atividade**; **Registro diário → Salvar check-in**.
 4. **Sua evolução** para ver gráfico e feedback; **Configurações** para backups.
 5. Em Safari iPhone, **Compartilhar → Adicionar à Tela de Início**.
+
+## EVOLVE Research Lab — Instrumentação de UX Research (outubro/2026)
+
+**Incluído:** Consentimento opcional (por padrão desativado), coleta estritamente allowlisted de categorias/eventos, botão de revogação, exportação local, formulário privado de feedback e painel do pesquisador em `beta/research.html`.
+
+A coleta automática centralizada **não está ativa** enquanto `beta/config.js` não receber URL Supabase e chave publicável, contas autenticadas não estiverem configuradas e a migração `supabase/research.sql` não for executada. Até então, o participante pode exportar seu pacote JSON de pesquisa voluntariamente, e o pesquisador pode importá-lo localmente no painel. Nenhuma informação do usuário é enviada ao GitHub pela pesquisa.
+
+**Configuração do servidor para pesquisa:**
+1. Crie e configure o projeto Supabase e execute `supabase/schema.sql`, depois `supabase/research.sql` no SQL Editor.
+2. Ative autenticação de e-mail e URL de redirecionamento para `https://opedromoedas.github.io/EVOLVE/beta/` e `https://opedromoedas.github.io/EVOLVE/beta/research.html`.
+3. Use apenas `supabaseUrl` e `supabaseAnonKey` públicos em `beta/config.js` — NUNCA service_role nem senhas privadas.
+4. Crie a conta do pesquisador em Supabase Auth. Copie o UUID autenticado em **Authentication → Users** e, no SQL Editor (com credenciais do projeto), conceda acesso: `insert into public.evolve_research_admins(user_id) values ('UUID-DO-PESQUISADOR') on conflict do nothing;`.
+5. Abra `beta/research.html`, entre com o e-mail pesquisador e clique **Carregar pesquisas**. Apenas esta conta consegue ler os dados de todos os participantes. A exportação CSV entrega somente agregados.
+6. Antes de convidar testadores para coleta central, publique política completa de privacidade com contato do controlador, prazo real de retenção, procedimento de exclusão e canal de requisições dos titulares. Não ative tratamento centralizado sem essa etapa.
+
+**Métricas coletadas** (somente com consentimento): `onboarding_completed`, `goal_created/updated` (categoria e frequência em faixas), `plan_previewed`, `plan_applied`, `plan_replanned`, `activity_completed/reopened` (categoria), `checkin_saved` (sem valores), `calendar_exported/connected` (sem agenda), `screen_opened`, `feedback_requested`. Os textos das metas, notas de check-in, horários e dados Google/Apple **não** entram na telemetria.
+
+**Limitações:** eventos e formulários enviados apenas quando existe conta autenticada no Supabase. Opt-out remove eventos locais e tenta exclusão remota da conta autenticada; se estiver offline, a exclusão remota fica pendente até novo acesso com a mesma conta. Não há garantia de ausência de IP nos logs de infraestrutura do provedor, pois isso depende da configuração contratada. O Research Lab não é ferramenta de análise de dados sensíveis, nem fornece identificação de pessoa individual.
