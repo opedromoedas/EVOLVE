@@ -1,0 +1,20 @@
+{
+  "id": "./index.html",
+  "name": "EVOLVE | Intelligence Room",
+  "short_name": "EVOLVE",
+  "description": "Acompanhamento da evolução pessoal em 30 dias.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#142838",
+  "theme_color": "#142838",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
