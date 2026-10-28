@@ -1,5 +1,5 @@
 /* EVOLVE Beta — cache por rota: o Research Lab offline nunca deve virar a Home. */
-const CACHE = 'evolve-designlab-v04-life';
+const CACHE = 'evolve-designlab-v05-config';
 const ASSETS = [
   './', './index.html', './styles.css', './design-lab.css', './scifi.css', './scifi.js', './cinematic.css', './cinematic.js', './mountains.svg', './life.css', './life.js', './lugares.html', './owner.html', './owner.js', './scifi-kit.css', './scifi-kit.js', './design-system.html', './app.js', './research.js', './config.js',
   './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png',
@@ -44,6 +44,14 @@ self.addEventListener('fetch', event => {
         });
       })
     );
+    return;
+  }
+  // Configuracao de autenticação: nunca usar uma copia antiga como primeira opcao.
+  if (url.pathname.endsWith('/config.js') || url.pathname.endsWith('/owner.js')) {
+    event.respondWith(fetch(request, {cache: 'no-store'}).then(response => {
+      if (response.ok) event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, response.clone())));
+      return response;
+    }).catch(() => caches.match(request, {ignoreSearch: true})));
     return;
   }
   event.respondWith(caches.match(request).then(hit => hit || fetch(request).then(response => {
