@@ -1,0 +1,20 @@
+/* EVOLVE Motion Language 0.4 — accessible, composited animation */
+@media (prefers-reduced-motion:no-preference){
+@keyframes evEnter{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes evFade{from{opacity:0}to{opacity:1}}
+@keyframes evShimmer{from{background-position:200% center}to{background-position:-200% center}}
+@keyframes evPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,204,99,.14)}50%{box-shadow:0 0 0 10px rgba(255,204,99,0)}}
+.onboard-left .brand,.onboard-left .eyebrow,.onboard-left h1,.onboard-left p{animation:evEnter .65s cubic-bezier(.2,.8,.2,1) both}
+.onboard-left h1{animation-delay:.09s}.onboard-left p{animation-delay:.19s}
+.onboard-right>.eyebrow,.onboard-right>h2,.onboard-right>p,.onboard-right .onboard-card,.onboard-right .onboard-panel,.onboard-right form{animation:evEnter .58s cubic-bezier(.2,.8,.2,1) both}
+.onboard-right>h2{animation-delay:.08s}.onboard-right>p{animation-delay:.14s}.onboard-right form,.onboard-right .onboard-card,.onboard-right .onboard-panel{animation-delay:.2s}
+.onboard-screen .btn.primary,.portal-primary{transition:transform .23s ease,box-shadow .23s ease,filter .23s ease;animation:evPulse 4.5s ease-in-out infinite}
+.onboard-screen .btn.primary:hover,.portal-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(246,196,104,.26)}
+.onboard-screen .btn.primary:active,.portal-primary:active{transform:scale(.98)}
+.card,.stat-card,.goal-card,.portal-steps button{transition:transform .23s cubic-bezier(.2,.8,.2,1),border-color .2s,box-shadow .2s}
+.card:hover,.stat-card:hover,.goal-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px #0002}
+input,select,textarea{transition:border-color .22s ease,box-shadow .22s ease,background-color .22s ease}
+input:focus-visible,select:focus-visible,textarea:focus-visible{box-shadow:0 0 0 4px rgba(85,233,243,.13)}
+.progress-fill,.bar-slot .bar{transition:width .75s cubic-bezier(.2,.8,.2,1),height .75s cubic-bezier(.2,.8,.2,1)}
+}
+@media(prefers-reduced-motion:reduce){.onboard-left *,.onboard-right *,.portal-primary,.onboard-screen .btn.primary{animation:none!important;transition:none!important}}

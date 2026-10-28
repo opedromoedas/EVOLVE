@@ -10,3 +10,16 @@
 .bootmark.evolve-branded{height:84px;width:75px}
 .evolve-brand-image.evolve-icon-image{width:54px;height:64px;max-width:54px;max-height:64px;object-fit:contain}
 @media(max-width:560px){.portal-brand.evolve-branded{width:143px;height:53px}.top .brand.evolve-branded{width:152px;height:52px}.sidebar .brand.evolve-branded{width:175px}.wordmark.evolve-branded{width:155px;height:54px}}
+
+/* Brand in onboarding — real light/dark image; avoid placeholder E */
+.onboard-left .brand.evolve-branded{width:min(280px,80vw);height:89px;padding:0!important;min-height:80px}
+.onboard-left .brand.evolve-branded .evolve-brand-image{max-width:100%;max-height:89px;object-fit:contain;object-position:left center}
+@media(max-width:760px){.onboard-left .brand.evolve-branded{height:75px;min-height:75px;width:min(250px,76vw)}}
+/* Reflow experiment ribbon — keep mobile notch and motion controls separated */
+@media(max-width:800px){
+.lab-ribbon{min-height:49px;height:auto!important;flex-wrap:wrap!important;gap:6px 12px!important;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px!important;justify-content:flex-start!important;align-items:center}
+.lab-ribbon>span:nth-child(2){flex:1 1 140px;line-height:1.35}
+.lab-ribbon a{font-size:10px;white-space:normal!important;line-height:1.4}
+.lab-ribbon>a:not(.lab-ribbon__orig){flex:0 1 auto}
+}
+@media(max-width:400px){.lab-ribbon{padding-right:82px!important}.lab-ribbon a{font-size:9px}}

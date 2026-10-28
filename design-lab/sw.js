@@ -1,7 +1,7 @@
 /* EVOLVE Beta — cache por rota: o Research Lab offline nunca deve virar a Home. */
-const CACHE = 'evolve-designlab-v06-brand';
+const CACHE = 'evolve-designlab-v07-onboarding';
 const ASSETS = [
-  './', './index.html', './styles.css', './design-lab.css', './scifi.css', './scifi.js', './cinematic.css', './cinematic.js', './brand-assets.css', './brand-assets.js', './mountains.svg', './life.css', './life.js', './lugares.html', './owner.html', './owner.js', './scifi-kit.css', './scifi-kit.js', './design-system.html', './app.js', './research.js', './config.js',
+  './', './index.html', './styles.css', './design-lab.css', './scifi.css', './scifi.js', './cinematic.css', './cinematic.js', './brand-assets.css', './brand-assets.js', './motion-v04.css', './mountains.svg', './life.css', './life.js', './lugares.html', './owner.html', './owner.js', './scifi-kit.css', './scifi-kit.js', './design-system.html', './app.js', './research.js', './config.js',
   './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png',
   './apple-touch-icon.png', './privacidade.html', './research.html',
   './research-dashboard.js', './research-dashboard.css', './design-lab-research.css'
